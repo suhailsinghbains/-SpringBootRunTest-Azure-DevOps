@@ -11,6 +11,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: |
+    java -version
 - task: Maven@3
   inputs:
     mavenPomFile: 'complete/pom.xml'

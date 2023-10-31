@@ -15,7 +15,8 @@ steps:
   inputs:
     versionSpec: '21.0.1' 
     jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '/usr/local/Cellar/openjdk/21.0.1/libexec/openjdk.jdk/Contents/Home'
 
 - script: |
     java -version

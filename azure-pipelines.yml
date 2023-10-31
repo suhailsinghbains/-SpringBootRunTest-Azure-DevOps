@@ -27,3 +27,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
+- script: |
+    java /Users/suhailsinghbains/Downloads/myagent/_work/1/s/complete/target/spring-boot-complete-0.0.1-SNAPSHOT.jar
+    echo "DONE"
+

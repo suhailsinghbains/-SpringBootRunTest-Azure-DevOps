@@ -10,15 +10,18 @@ pool:
   name: Suhail-macOS
   vmImage: ubuntu-latest
 
+- script: |
+    java -version
+  env:
+    JAVA_HOME: $(JAVA_HOME_8_X64)
+    PATH: $(JAVA_HOME_8_X64)/bin:$(PATH)
+
 steps:
 - task: JavaToolInstaller@0
-    inputs:
-      versionSpec: "11"
-      jdkArchitectureOption: x64
-      jdkSourceOption: LocalDirectory
-      jdkFile: "/builds/openjdk-11.0.2_linux-x64_bin.tar.gz"
-      jdkDestinationDirectory: "/builds/binaries/externals"
-      cleanDestinationDirectory: true
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
 
 - task: Maven@3
   inputs:

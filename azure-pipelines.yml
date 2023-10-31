@@ -8,6 +8,7 @@ trigger:
 
 pool:
   name: Suhail-macOS
+  vmImage: ubuntu-latest
 
 steps:
 - task: Maven@3

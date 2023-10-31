@@ -11,13 +11,6 @@ pool:
   vmImage: macOS-13
 
 steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '21.0.1' 
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'LocalDirectory'
-    jdkFile: '/usr/local/Cellar/openjdk/21.0.1/share/../bin/../libexec/openjdk.jdk/Contents/Home/lib/'
-
 - script: |
     java -version
     echo "JAVA_HOME_21_X64 fixing"
@@ -29,8 +22,6 @@ steps:
   inputs:
     mavenPomFile: 'complete/pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '21.0.1'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'

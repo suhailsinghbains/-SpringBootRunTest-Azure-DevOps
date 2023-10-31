@@ -7,7 +7,6 @@ trigger:
 - main
 
 pool:
-  name: Suhail-macOS
   vmImage: ubuntu-latest
 
 steps:

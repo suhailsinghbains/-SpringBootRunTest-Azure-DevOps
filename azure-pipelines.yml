@@ -8,15 +8,22 @@ trigger:
 
 pool:
   name: Suhail-macOS
-  vmImage: ubuntu-latest
+  vmImage: macOS-13
 
 steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '21.0.1' 
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
 - script: |
     java -version
     echo "JAVA_HOME_21_X64 fixing"
     JAVA_HOME_21_X64='/usr/local/Cellar/openjdk/21.0.1/libexec/openjdk.jdk/Contents/Home'
     echo $JAVA_HOME_21_X64
     export JAVA_HOME_21_X64
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'complete/pom.xml'
